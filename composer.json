@@ -1,0 +1,38 @@
+{
+  "name": "shoplic-kr/fields",
+  "description": "Meta field, option field wrapper",
+  "homepage": "https://github.com/shoplic-kr/fields",
+  "type": "library",
+  "license": "GPL-2.0-or-later",
+  "autoload": {
+    "psr-4": {
+      "ShoplicKr\\Fields\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ShoplicKr\\Fields\\Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "changwoo",
+      "email": "changwoo@shoplic.kr"
+    }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "shoplic-kr/interface": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9",
+    "yoast/phpunit-polyfills": "^2.0"
+  },
+  "scripts": {
+    "test": "WP_CORE_DIR=$PWD/tests/tests-core WP_TESTS_DIR=$PWD/tests/tests-lib WP_TESTS_PHPUNIT_POLYFILLS_PATH=$PWD/vendor/yoast/phpunit-polyfills vendor/bin/phpunit",
+    "test:setup": "WP_CORE_DIR=$PWD/tests/tests-core WP_TESTS_DIR=$PWD/tests/tests-lib ./bin/install-wp-tests.sh",
+    "test:clean": "rm -rf $PWD/tests/test-core $PWD/tests/tests-lib"
+  },
+  "minimum-stability": "beta",
+  "version": "1.0.0"
+}
